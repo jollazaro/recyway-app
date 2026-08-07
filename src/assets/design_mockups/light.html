@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecyWay - Tema Cyber Eco (Claro)</title>
+    <style>
+        body, html {
+            margin: 0; padding: 0; width: 100%; height: 100%;
+            display: flex; justify-content: center; align-items: center;
+            background-color: #f8fafc; /* Blanco hueso/Slate clarito */
+            font-family: 'Inter', sans-serif; overflow: hidden;
+        }
+        .splash-container { display: flex; flex-direction: column; align-items: center; }
+        
+        .logo-svg { 
+            width: 140px; height: 140px; margin-bottom: 24px; 
+            overflow: visible;
+        }
+        /* 1. Animación del Pin (Aparece primero con aplaste y rebote) */
+        .logo-pin {
+            opacity: 0; transform-origin: 75px 70px;
+            animation: jellyPin 1s forwards 0.2s;
+            filter: drop-shadow(0 8px 8px rgba(239, 68, 68, 0.3));
+        }
+        @keyframes jellyPin {
+            0% { opacity: 0; transform: translateY(-100px) scale(0.5, 1.5); }
+            30% { opacity: 1; transform: translateY(0) scale(1.4, 0.6); } /* Aplaste */
+            50% { transform: translateY(-30px) scale(0.8, 1.2); } /* Rebote */
+            70% { transform: translateY(0) scale(1.1, 0.9); }
+            100% { opacity: 1; transform: translateY(0) scale(1, 1); }
+        }
+
+        /* 2. Animación de la Ruta (Se dibuja desde el pin hacia las hojas) */
+        .logo-route {
+            clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+            animation: revealRoute 0.6s linear forwards 0.8s;
+            /* Sin glow de neón en modo claro, sombra estándar */
+            filter: drop-shadow(0 4px 6px rgba(14, 165, 233, 0.3));
+        }
+        @keyframes revealRoute {
+            to { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+        }
+
+        /* 3. Animación del Brote (Hoja Trasera) */
+        .leaf-back {
+            opacity: 0; transform-origin: 0 0;
+            animation: jellyLeafBack 0.8s forwards 1.4s;
+            filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.1));
+        }
+        @keyframes jellyLeafBack {
+            0% { opacity: 0; transform: translate(35px, 65px) rotate(-20deg) scale(0); }
+            40% { opacity: 1; transform: translate(35px, 65px) rotate(-30deg) scale(1.2); }
+            60% { transform: translate(35px, 65px) rotate(-15deg) scale(0.8); }
+            100% { opacity: 1; transform: translate(35px, 65px) rotate(-20deg) scale(0.9); }
+        }
+
+        /* 4. Animación del Brote (Hoja Frontal) */
+        .leaf-front {
+            opacity: 0; transform-origin: 0 0;
+            animation: jellyLeafFront 0.8s forwards 1.6s;
+            filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.15));
+        }
+        @keyframes jellyLeafFront {
+            0% { opacity: 0; transform: translate(35px, 65px) rotate(20deg) scale(0); }
+            40% { opacity: 1; transform: translate(35px, 65px) rotate(30deg) scale(1.3); }
+            60% { transform: translate(35px, 65px) rotate(15deg) scale(0.85); }
+            100% { opacity: 1; transform: translate(35px, 65px) rotate(20deg) scale(0.95); }
+        }
+
+        /* 5. Animación del Brote (Flor) */
+        .flower {
+            opacity: 0; transform-origin: 0 0;
+            animation: jellyFlower 0.8s forwards 1.8s;
+            filter: drop-shadow(0 4px 6px rgba(245, 158, 11, 0.3));
+        }
+        @keyframes jellyFlower {
+            0% { opacity: 0; transform: translate(35px, 65px) scale(0); }
+            40% { opacity: 1; transform: translate(35px, 65px) scale(1.1); }
+            60% { transform: translate(35px, 65px) scale(0.6); }
+            100% { opacity: 1; transform: translate(35px, 65px) scale(0.75); }
+        }
+
+        /* Movimiento flotante continuo de todo el logo después de presentarse */
+        .logo-group {
+            animation: float 3s ease-in-out infinite 2.0s;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .brand-name {
+            font-size: 2.5rem; font-weight: 800; color: #0f172a; letter-spacing: -1px;
+            opacity: 0; transform: translateY(20px);
+            animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 2.0s;
+        }
+        .brand-tagline {
+            font-size: 1rem; color: #64748b; margin-top: 8px;
+            opacity: 0; animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 2.2s;
+        }
+        @keyframes slideUpFade { to { opacity: 1; transform: translateY(0); } }
+
+        .loading-bar-container {
+            width: 150px; height: 4px; background-color: #e2e8f0; border-radius: 2px;
+            margin-top: 30px; overflow: hidden; opacity: 0;
+            animation: slideUpFade 0.5s ease forwards 2.6s;
+        }
+        .loading-bar {
+            height: 100%; width: 0%; background-color: #0ea5e9;
+            animation: loadProgress 2s ease-in-out forwards 2.8s;
+        }
+        @keyframes loadProgress { 0% { width: 0%; } 40% { width: 60%; } 100% { width: 100%; } }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="splash-container">
+        <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <g class="logo-group">
+                <!-- Ruta de PUNTOS PERFECTOS azules -->
+                <path class="logo-route" d="M 35,65 C 45,95 60,95 75,70" fill="none" stroke="#0ea5e9" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0, 11" />
+                
+                <!-- HOJA 1 (Fondo, Izquierda) -->
+                <g class="leaf-back">
+                    <path d="M 0,0 C -25,-20 -25,-55 0,-65 L 0,0 Z" fill="#064e3b"/> 
+                    <path d="M 0,0 C 25,-20 25,-55 0,-65 L 0,0 Z" fill="#047857"/> 
+                </g>
+
+                <!-- HOJA 2 (Frente, Derecha) -->
+                <g class="leaf-front">
+                    <!-- Sombra -->
+                    <path d="M 0,0 C -25,-20 -25,-55 0,-65 C 25,-20 25,-55 0,-65 Z" fill="rgba(0,0,0,0.15)" transform="translate(2, 2)"/>
+                    <path d="M 0,0 C -25,-20 -25,-55 0,-65 L 0,0 Z" fill="#059669"/> 
+                    <path d="M 0,0 C 25,-20 25,-55 0,-65 L 0,0 Z" fill="#10b981"/> 
+                    <line x1="0" y1="0" x2="0" y2="-62" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+                </g>
+
+                <!-- LA FLOR (Brote central) -->
+                <g class="flower">
+                    <!-- Pétalo Izquierdo -->
+                    <path d="M 0,0 C -15,-5 -30,-15 -25,-30 C -10,-30 -5,-15 0,0 Z" fill="#fbbf24"/>
+                    <!-- Pétalo Derecho -->
+                    <path d="M 0,0 C 15,-5 30,-15 25,-30 C 10,-30 5,-15 0,0 Z" fill="#f59e0b"/>
+                    <!-- Pétalo Central -->
+                    <path d="M 0,0 C -10,-10 -15,-35 0,-45 C 15,-35 10,-10 0,0 Z" fill="#d97706"/>
+                </g>
+
+                <!-- Pin Vertical Rojo -->
+                <g class="logo-pin">
+                    <path d="M 75,70 C 88,55 95,45 95,33 A 20,20 0 0,0 55,33 C 55,45 62,55 75,70 Z" fill="#ef4444"/>
+                    <circle cx="75" cy="33" r="8" fill="#ffffff"/>
+                </g>
+            </g>
+        </svg>
+        <div class="brand-name">RecyWay</div>
+        <div class="brand-tagline">Conectando la ecología</div>
+        <div class="loading-bar-container"><div class="loading-bar"></div></div>
+    </div>
+</body>
+</html>

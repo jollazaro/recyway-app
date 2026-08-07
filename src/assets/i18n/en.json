@@ -1,0 +1,60 @@
+{
+  "APP": {
+    "NAME": "RecyWay",
+    "TAGLINE": "Smart ecological logistics"
+  },
+  "NAV": {
+    "HOME": "Home",
+    "MAP": "Map",
+    "HISTORY": "History",
+    "PROFILE": "Profile"
+  },
+  "HOME": {
+    "GREETING": "Welcome back",
+    "WEEKLY_GOAL": "Your weekly goal",
+    "GOAL_HINT": "Complete your goal and earn double XP.",
+    "VIEW_MAP": "View Map",
+    "ECOPOINTS": "EcoPoints",
+    "HISTORY": "History",
+    "YOUR_CONTRIBUTIONS": "Your contributions",
+    "RECENT_ACTIVITY": "Recent activity",
+    "NEW_DELIVERY": "New Delivery",
+    "POINTS_SUFFIX": "pts"
+  },
+  "AUTH": {
+    "TAB_LOGIN": "Sign In",
+    "TAB_REGISTER": "Register",
+    "TAB_PARTNERS": "Partners",
+    "LOGIN": "Sign In",
+    "REGISTER_BTN": "Create Account",
+    "EMAIL": "Email Address",
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "TENANT_LABEL": "Municipality / Organization",
+    "TENANT_HINT": "e.g. caba, cordoba, santafe",
+    "TENANT_INVALID": "The specified municipality does not exist.",
+    "REMEMBER_ME": "Remember me",
+    "FORGOT_PASSWORD": "Forgot your password?",
+    "CONTINUE_GOOGLE": "Continue with Google",
+    "OR_EMAIL": "Or credentials",
+    "PRIVACY_ACCEPT": "I accept the Privacy Policy",
+    "INVALID_CREDENTIALS": "Invalid username or password.",
+    "REGISTER_SUCCESS": "Account created successfully! You can now sign in.",
+    "PARTNERS_TITLE": "Do you operate an Eco-Point or hauling service?",
+    "PARTNERS_DESC": "Collector and Collection Point roles are securely verified and assigned by the Municipality Administration.",
+    "PARTNERS_BTN": "Apply for Partner Registration"
+  },
+  "THEME": {
+    "LIGHT": "Light",
+    "DARK": "Dark",
+    "SYSTEM": "System"
+  },
+  "ERRORS": {
+    "GENERIC": "An unexpected error occurred.",
+    "BAD_REQUEST": "Invalid data. Please check the information provided.",
+    "FORBIDDEN": "Insufficient permissions to perform this action.",
+    "NOT_FOUND": "The requested resource was not found.",
+    "SERVER_ERROR": "Service temporarily unavailable. Please try again later.",
+    "NETWORK_ERROR": "No internet connection. Please check your network."
+  }
+}

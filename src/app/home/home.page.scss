@@ -1,0 +1,327 @@
+// Removed deprecated @import since Ionic variables are CSS custom properties available globally
+
+// --- Base Styles & Layout ---
+.main-layout {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+// --- Header ---
+.custom-header {
+  padding: 8px 0;
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    
+    ion-avatar {
+      width: 48px;
+      height: 48px;
+    }
+    
+    .welcome-text {
+      display: flex;
+      flex-direction: column;
+      
+      span {
+        font-size: 12px;
+        color: var(--ion-color-medium);
+      }
+      
+      strong {
+        font-size: 16px;
+        color: var(--ion-color-dark);
+      }
+    }
+  }
+  
+  .points-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: rgba(var(--ion-color-success-rgb), 0.15);
+    padding: 6px 12px;
+    border-radius: 20px;
+    
+    ion-icon {
+      color: var(--ion-color-success);
+    }
+    
+    span {
+      font-weight: bold;
+      font-size: 14px;
+      color: var(--ion-color-success);
+    }
+  }
+}
+
+// --- Goal Section ---
+.goal-card {
+  border-radius: 20px;
+  margin: 0;
+  background: var(--ion-card-background, var(--ion-color-light));
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+
+  ion-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .goal-info {
+    flex: 1;
+    padding-right: 16px;
+    
+    .subtitle {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ion-color-medium);
+      letter-spacing: 1px;
+      margin: 0 0 8px;
+    }
+    
+    .title {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--ion-color-dark);
+      margin: 0 0 8px;
+    }
+    
+    .description {
+      font-size: 14px;
+      color: var(--ion-color-medium);
+      margin: 0;
+    }
+  }
+}
+
+// Progress Ring SVG
+.progress-ring-container {
+  width: 80px;
+  height: 80px;
+}
+
+.circular-chart {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 250px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: var(--ion-color-light-shade);
+  stroke-width: 3;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke: var(--ion-color-success);
+  transition: stroke-dasharray 1s ease-out;
+}
+
+.percentage {
+  fill: var(--ion-color-dark);
+  font-family: sans-serif;
+  font-size: 8px;
+  font-weight: bold;
+  text-anchor: middle;
+}
+
+// --- Quick Actions ---
+.actions-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  .action-card {
+    margin: 0;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    background: var(--ion-card-background, var(--ion-color-light));
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .icon-wrapper {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--ion-color-light-shade);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 12px;
+      
+      ion-icon {
+        font-size: 24px;
+      }
+    }
+    
+    h4 {
+      margin: 0 0 4px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ion-color-dark);
+    }
+    
+    p {
+      margin: 0;
+      font-size: 12px;
+      color: var(--ion-color-medium);
+    }
+  }
+}
+
+// --- Activity Section ---
+.activity-section {
+  margin-top: 8px;
+
+  .section-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ion-color-medium);
+    letter-spacing: 1px;
+    margin: 0 0 12px 8px;
+  }
+  
+  .activity-list {
+    background: transparent;
+  }
+
+  ion-item {
+    --background: var(--ion-card-background, var(--ion-color-light));
+    --border-radius: 16px;
+    margin-bottom: 8px;
+    --padding-start: 16px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+  }
+
+  .activity-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 16px;
+    
+    &.success { background-color: var(--ion-color-success); }
+    &.tertiary { background-color: var(--ion-color-tertiary); }
+    &.warning { background-color: var(--ion-color-warning); }
+  }
+
+  .activity-details {
+    font-size: 15px;
+    color: var(--ion-color-dark);
+  }
+  
+  .activity-points {
+    font-weight: bold;
+    font-size: 15px;
+    
+    &.success-text { color: var(--ion-color-success); }
+    &.tertiary-text { color: var(--ion-color-tertiary); }
+    &.warning-text { color: var(--ion-color-warning); }
+  }
+}
+
+// --- Footer & Nav ---
+ion-footer {
+  background: var(--ion-background-color, #fff);
+}
+
+.main-action {
+  padding: 16px;
+  
+  .submit-button {
+    --border-radius: 24px;
+    margin: 0;
+    height: 52px;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 8px 16px rgba(var(--ion-color-primary-rgb), 0.3);
+  }
+}
+
+.custom-tab-bar {
+  --border: none;
+  --background: var(--ion-background-color, #fff);
+  padding-bottom: 12px; // safe area spacing
+}
+
+// --- Responsive Breakpoints ---
+// Tablet
+@media (min-width: 768px) {
+  .main-layout {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      "goal goal"
+      "actions activity";
+      
+    .goal-section {
+      grid-area: goal;
+    }
+    
+    .actions-section {
+      grid-area: actions;
+      grid-template-columns: 1fr; // stack on tablet side panel
+    }
+    
+    .activity-section {
+      grid-area: activity;
+      margin-top: 0;
+    }
+  }
+}
+
+// Desktop / Web
+@media (min-width: 1024px) {
+  .main-layout {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+      "goal activity"
+      "actions activity";
+      
+    .actions-section {
+      grid-template-columns: 1fr 1fr; // side by side on desktop
+    }
+  }
+  
+  .main-action {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+// --- Dark Mode Enhancements ---
+@media (prefers-color-scheme: dark) {
+  .points-badge {
+    background-color: rgba(var(--ion-color-success-rgb), 0.2);
+  }
+  
+  .goal-card, .action-card, ion-item {
+    background: #1e293b; // slate-800 specific dark shade matching design
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  }
+  
+  .circle-bg {
+    stroke: #334155; // slate-700
+  }
+  
+  .action-card .icon-wrapper {
+    background: #334155;
+  }
+}

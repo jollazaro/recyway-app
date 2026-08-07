@@ -1,0 +1,119 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar class="custom-header">
+    <div class="header-content">
+      <div class="user-info">
+        <ion-avatar>
+          <img [src]="user.avatarUrl" [alt]="user.name" />
+        </ion-avatar>
+        <div class="welcome-text">
+          <span>Hola de nuevo</span>
+          <strong>{{ user.name }}</strong>
+        </div>
+      </div>
+      <div class="points-badge">
+        <ion-icon name="leaf-outline"></ion-icon>
+        <span>{{ user.points }} pts</span>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense" class="ion-no-border">
+    <ion-toolbar>
+      <ion-title size="large">RecyWay</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="main-layout">
+    <!-- Meta Semanal -->
+    <section class="goal-section">
+      <ion-card class="goal-card">
+        <ion-card-content>
+          <div class="goal-info">
+            <h3 class="subtitle">TU META SEMANAL</h3>
+            <h2 class="title">{{ weeklyGoal.current }} / {{ weeklyGoal.max }} kg</h2>
+            <p class="description">Completa tu meta y obtén doble XP.</p>
+          </div>
+          <div class="progress-ring-container">
+            <svg viewBox="0 0 36 36" class="circular-chart">
+              <path class="circle-bg"
+                d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+              <path class="circle"
+                [attr.stroke-dasharray]="weeklyGoal.percentage + ', 100'"
+                d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+              <text x="18" y="20.35" class="percentage">{{ weeklyGoal.percentage }}%</text>
+            </svg>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="actions-section">
+      <ion-card class="action-card">
+        <div class="icon-wrapper">
+          <ion-icon name="map-outline" color="primary"></ion-icon>
+        </div>
+        <h4>Ver Mapa</h4>
+        <p>EcoPuntos</p>
+      </ion-card>
+      <ion-card class="action-card">
+        <div class="icon-wrapper">
+          <ion-icon name="time-outline" color="tertiary"></ion-icon>
+        </div>
+        <h4>Historial</h4>
+        <p>Tus aportes</p>
+      </ion-card>
+    </section>
+
+    <!-- Actividad Reciente -->
+    <section class="activity-section">
+      <h3 class="section-title">ACTIVIDAD RECIENTE</h3>
+      <ion-list class="activity-list" lines="none">
+        <ion-item *ngFor="let item of recentActivity">
+          <div class="activity-dot" [ngClass]="item.color"></div>
+          <ion-label>
+            <div class="activity-details">
+              <strong>{{ item.weight }}</strong> {{ item.type }}
+            </div>
+          </ion-label>
+          <div class="activity-points" [ngClass]="item.color + '-text'">
+            {{ item.points }}
+          </div>
+        </ion-item>
+      </ion-list>
+    </section>
+  </div>
+</ion-content>
+
+<!-- Bottom Actions & Navigation -->
+<ion-footer class="ion-no-border">
+  <div class="main-action">
+    <ion-button expand="block" class="submit-button" color="primary" shape="round">
+      Nueva Entrega
+    </ion-button>
+  </div>
+  <ion-tab-bar slot="bottom" class="custom-tab-bar">
+    <ion-tab-button tab="home">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="map">
+      <ion-icon name="map-outline"></ion-icon>
+      <ion-label>Mapa</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="history">
+      <ion-icon name="time-outline"></ion-icon>
+      <ion-label>Historial</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

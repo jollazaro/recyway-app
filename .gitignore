@@ -1,0 +1,19 @@
+# Dependencias y Bloqueos
+node_modules/
+package-lock.json
+
+# Carpetas Nativas de Capacitor
+android/
+ios/
+
+# Builds / Compilados
+dist/
+www/
+.angular/
+
+# IDEs y Editores
+.idea/
+.vscode/
+
+# Entornos
+.env

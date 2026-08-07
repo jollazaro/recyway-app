@@ -1,0 +1,60 @@
+{
+  "APP": {
+    "NAME": "RecyWay",
+    "TAGLINE": "Logística ecológica inteligente"
+  },
+  "NAV": {
+    "HOME": "Inicio",
+    "MAP": "Mapa",
+    "HISTORY": "Historial",
+    "PROFILE": "Perfil"
+  },
+  "HOME": {
+    "GREETING": "Hola de nuevo",
+    "WEEKLY_GOAL": "Tu meta semanal",
+    "GOAL_HINT": "Completa tu meta y obtén doble XP.",
+    "VIEW_MAP": "Ver Mapa",
+    "ECOPOINTS": "EcoPuntos",
+    "HISTORY": "Historial",
+    "YOUR_CONTRIBUTIONS": "Tus aportes",
+    "RECENT_ACTIVITY": "Actividad reciente",
+    "NEW_DELIVERY": "Nueva Entrega",
+    "POINTS_SUFFIX": "pts"
+  },
+  "AUTH": {
+    "TAB_LOGIN": "Ingresar",
+    "TAB_REGISTER": "Registrarse",
+    "TAB_PARTNERS": "Aliados",
+    "LOGIN": "Iniciar Sesión",
+    "REGISTER_BTN": "Crear Cuenta",
+    "EMAIL": "Correo Electrónico",
+    "USERNAME": "Nombre de Usuario",
+    "PASSWORD": "Contraseña",
+    "TENANT_LABEL": "Municipio / Organización",
+    "TENANT_HINT": "Ej: caba, cordoba, santafe",
+    "TENANT_INVALID": "El municipio especificado no existe.",
+    "REMEMBER_ME": "Recordarme",
+    "FORGOT_PASSWORD": "¿Olvidaste tu clave?",
+    "CONTINUE_GOOGLE": "Continuar con Google",
+    "OR_EMAIL": "O con tus datos",
+    "PRIVACY_ACCEPT": "Acepto las Políticas de Privacidad (Ley 25.326)",
+    "INVALID_CREDENTIALS": "Usuario o contraseña incorrectos.",
+    "REGISTER_SUCCESS": "¡Cuenta creada con éxito! Ya podés iniciar sesión.",
+    "PARTNERS_TITLE": "¿Operás un Eco-Punto o servicio de transporte?",
+    "PARTNERS_DESC": "Los roles de Recolector Oficial y Punto de Acopio son verificados de forma segura por la Administración del Municipio.",
+    "PARTNERS_BTN": "Solicitar Alta de Aliado"
+  },
+  "THEME": {
+    "LIGHT": "Claro",
+    "DARK": "Oscuro",
+    "SYSTEM": "Sistema"
+  },
+  "ERRORS": {
+    "GENERIC": "Ocurrió un error inesperado.",
+    "BAD_REQUEST": "Datos incorrectos. Por favor, revisá la información ingresada.",
+    "FORBIDDEN": "Permisos insuficientes para realizar esta acción.",
+    "NOT_FOUND": "El recurso solicitado no existe.",
+    "SERVER_ERROR": "Servicio no disponible momentáneamente. Intentá de nuevo más tarde.",
+    "NETWORK_ERROR": "Sin conexión a internet. Verificá tu red."
+  }
+}

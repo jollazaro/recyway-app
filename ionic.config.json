@@ -1,0 +1,7 @@
+{
+  "name": "recyway-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

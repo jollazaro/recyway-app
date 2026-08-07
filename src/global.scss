@@ -1,0 +1,92 @@
+/*
+ * CSS Global de la App
+ * ----------------------------------------------------------------------------
+ * Coloca aquí las reglas de estilo que quieras aplicar globalmente.
+ * Estos estilos son para toda la app, no solo para un componente.
+ * Además, este archivo sirve como punto de entrada para importar otros
+ * archivos CSS/Sass que se incluirán en el CSS de salida.
+ * Para más información sobre hojas de estilo globales, visita la documentación:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* ============================================================
+   Tailwind CSS v4
+   ============================================================ */
+@use "tailwindcss";
+
+/* Habilita toggle de modo oscuro por clase (además de la preferencia del sistema) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Tokens de Diseño RecyWay para Tailwind v4 */
+@theme {
+  /* Primario: Verde Esmeralda (Hojas del logo) */
+  --color-primary: #10b981;
+  --color-primary-light: #34d399;
+  --color-primary-dark: #059669;
+  --color-primary-darker: #047857;
+
+  /* Secundario: Azul Cielo (Ruta de puntos del logo) */
+  --color-secondary: #0ea5e9;
+  --color-secondary-light: #38bdf8;
+  --color-secondary-dark: #0284c7;
+
+  /* Acento: Ámbar (Flor/brote del logo) */
+  --color-accent: #f59e0b;
+  --color-accent-light: #fbbf24;
+  --color-accent-dark: #d97706;
+
+  /* Peligro: Rojo (Pin de ubicación) */
+  --color-danger: #ef4444;
+  --color-danger-light: #f87171;
+  --color-danger-dark: #dc2626;
+
+  /* Superficies */
+  --color-surface-light: #ffffff;
+  --color-surface-dark: #1e293b;
+  --color-background-light: #f8fafc;
+  --color-background-dark: #0f172a;
+
+  /* Texto */
+  --color-text-primary-light: #0f172a;
+  --color-text-primary-dark: #f8fafc;
+  --color-text-secondary-light: #64748b;
+  --color-text-secondary-dark: #94a3b8;
+
+  /* Bordes */
+  --color-border-light: #e2e8f0;
+  --color-border-dark: #334155;
+
+  /* Tipografía: Inter (sans-serif geométrica, legible en calle y monitor 4K) */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Radio de bordes */
+  --radius-card: 12px;
+  --radius-button: 10px;
+  --radius-input: 8px;
+}
+
+/* ============================================================
+   CSS base requerido para que los componentes de Ionic funcionen correctamente
+   ============================================================ */
+@import "@ionic/angular/css/core.css";
+
+/* CSS básico para apps construidas con Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Utilidades CSS opcionales (se pueden comentar si no se usan) */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Modo Oscuro de Ionic
+ * -----------------------------------------------------
+ * Usa la preferencia del sistema por defecto.
+ * El toggle manual se gestiona mediante ThemeService + override por clase en variables.scss
+ */
+@import '@ionic/angular/css/palettes/dark.system.css';
